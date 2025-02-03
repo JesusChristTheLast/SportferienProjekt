@@ -1,0 +1,104 @@
+Risky-Clicky 
+
+Ich möchte ein Clicker-Spiel machen, bei dem man wie gewohnt einen Button drückt, um eine Spielwährung zu bekommen. Im Verlauf des Spielens bekommt man die Möglichkeit, passives Einkommen zu erhalten und ab einem gewissen Punkt kann man sein Einkommen entweder verdoppeln (verdreifachen etc.) oder verlieren, indem man eine Slotmachine/Würfelwurf betätigt (z.B genaue Zahl des Wurfs ergibt Verdopplung etc.). Das ganze soll dann auf einer Database abgespeichert werden. Somit kann ich mich noch einmal mit SQL auseinandersetzen.
+Ich werde also PostgreSQL und Java benutzen.
+
+
+Muss-Ziele:
+-Funktionierendes "Clicker-Programm" (Währung beschaffen, passives Einkommen und Multiplikatoren)
+-Funktionierende Datenbank für Abspeichern des Spielstands (mithilfe von PostgreSQL)
+-"Gambling-Funktion" soll vorhanden sein (Coin-Toss/Slotmachine/Dice)
+
+Kann-Ziele:
+-Prestige Funktion um beispielsweise Grundeinkommen zu multiplizieren (Gewinn * 1.1 etc.)
+-Mehrere Spieler, also mehrere Speicherstände 
+-"Achievements", welche Boni geben
+-Zusätzliche Möglichkeiten Währung zu verdienen
+-GUI Elemente anpassen/verschönern
+-Konsequenzen wenn man beim "Gambling" verliert
+
+
+Planung:
+
+Tag 1:
+
+-Planung/Projektbeschreibung
+-GitHub repository aufsetzen
+-PostgreSQL lokal aufsetzen
+-Packages für Game-Logic, Ansicht (View) und Controller (verknüpft Game-Logic und Ansicht)
+
+Tag 2:
+
+-Grundgerüst der Benutzeroberfläche (GUI) aufbauen
+-Hauptfenster (Main Window) erstellen und layouten
+-Platzhalter für die Clicker-Komponenten und Upgrade-Buttons einfügen
+
+Tag 3:
+
+Clicker-Mechanik implementieren:
+-Variable für die Münzzählung anlegen
+-Button-Event einrichten, sodass bei jedem Klick die Münzzahl erhöht wird
+-Anzeige der aktuellen Münzzahl in der Ansicht integrieren
+
+Tag 4:
+
+Upgrade-System (z. B. Auto-Clicker) entwickeln:
+-Logik zur Berechnung der Kosten und Effekte der Upgrades
+-Möglichkeit schaffen, Upgrades zu kaufen und die Münzgenerierung zu erhöhen
+-GUI-Erweiterungen: Anzeige der verfügbaren Upgrades und deren Kosten
+
+Tag 5:
+
+Glücksspiel (z. B. Slot-Maschine oder Würfelspiel) programmieren:
+-Zufallsbasierte Gewinn-/Verlustlogik mit Java’s Random-Klasse umsetzen
+-Regeln und Auszahlungslogik für das Glücksspiel definieren
+
+Tag 6:
+
+Glücksspiel-Modul in die Benutzeroberfläche integrieren:
+
+-Eigenes Panel oder Dialog für das Glücksspiel erstellen
+-Eingabefelder für den Einsatz und einen "Spielen"-Button hinzufügen
+-Verknüpfung zwischen Glücksspiel-Logik (Game-Logic) und Anzeige (View) über den Controller herstellen
+
+Tag 7
+
+PostgreSQL-Datenbankanbindung weiter ausbauen:
+-PostgreSQL JDBC-Treiber ins Projekt einbinden
+-Testverbindung zur Datenbank programmieren (mit URL, Benutzername und Passwort)
+-Erste SQL-Tabelle(n) für Spielstände (Münzzahl, Upgrades, Glücksspielhistorie) erstellen
+
+Tag 8:
+
+Speicher- und Ladefunktionen (Save/Load) implementieren:
+-Funktionen entwickeln, um den aktuellen Spielstand in die PostgreSQL-Datenbank zu schreiben
+-Beim Programmstart den letzten gespeicherten Spielstand laden
+-Erste Tests der Datenpersistenz durchführen
+
+Tag 9:
+
+Erweiterung der Datenpersistenz:
+-Zusätzliche Daten (z. B. Highscores, detaillierte Glücksspielhistorie) in der Datenbank speichern
+-Automatisches Speichern (Auto-Save) in regelmäßigen Abständen integrieren
+-Optimierung der SQL-Abfragen und Implementierung von Fehlerbehandlungen
+
+Tag 10:
+
+Polieren und Optimieren der Benutzeroberfläche:
+-Layout und Design verfeinern (z. B. Tooltips, Beschriftungen)
+-Übergänge zwischen Hauptbildschirm und Glücksspiel-Ansicht verbessern
+-Visuelles Feedback (Animationen, Farbwechsel) bei Aktionen einbauen
+
+Tag 11:
+
+Gameplay-Balancing und Feinabstimmung:
+-Testen der Clicker-Mechanik, Upgrade-Kosten und Glücksspiel-Wahrscheinlichkeiten
+-Anpassungen an den Werten und Wahrscheinlichkeiten vornehmen, um ein faires und spaßiges Spielerlebnis zu erzielen
+-Logging oder Debugging-Tools einrichten, um Spielereignisse zu überwachen
+
+Tag 12:
+
+Zusätzliche Features und Erweiterungen (optional):
+-Erweiterungen wie ein Achievements-System oder eine Bestenliste implementieren
+-Soundeffekte oder weitere grafische Elemente hinzufügen
+-Umfassende Tests durchführen und erste Bugs beheben
